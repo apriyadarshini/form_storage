@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content%}
+	<h1 class="mb-3"> {'id': {{id}}} </h1>
+	
+	<article class="media content-section">
+	  <div class="media-body">
+           <div class="article-metadata">
+             {
+             'Form Field' : '{{ data.form_field }}',
+             'Value' : '{{ data.value }}',
+             'Localisable' : {{ data.localisable }}
+             }
+           </div>
+           
+         </div>
+       </article>
+	
+	
+{% endblock content%}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content%}
+	<div class="content-section">
+		<form method="POST" action = "">
+			{{form.hidden_tag()}}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Enter Data</legend>
+				
+				
+				<div class="form-group">
+					{{form.value.label(class="form=control-label")}}
+					{% if form.value.errors %}
+                        {{ form.value(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.value.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+						{{form.value(class="form=control form-control-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{form.localisable.label(class="form=control-label")}}
+					{% if form.localisable.errors %}
+                        {{ form.localisable(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.localisable.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+						{{form.localisable(class="form=control form-control-lg")}}
+					{% endif %}
+					Please enter Yes/No
+				</div>
+				P.S: Fields can be left blank if filter is not needed on that field.
+				
+			</fieldset>
+			<div class="form-group">
+				{{form.submit(class="btn btn-outline-info")}}
+				
+			</div>
+		</form>
+	</div>
+	
+	
+{% endblock content%}

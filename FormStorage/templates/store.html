@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content%}
+	<div class="content-section">
+		<form method="POST" action = "">
+			{{form.hidden_tag()}}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Enter Data</legend>
+				<div class="form-group">
+					{{form.form_field.label(class="form=control-label")}}
+					{% if form.form_field.errors %}
+                        {{ form.form_field(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.form_field.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+						{{form.form_field(class="form=control form-control-lg")}}
+					{% endif %}
+				</div>
+				
+				<div class="form-group">
+					{{form.value.label(class="form=control-label")}}
+					{% if form.value.errors %}
+                        {{ form.value(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.value.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+						{{form.value(class="form=control form-control-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-check">
+                    {{ form.localisable(class="form-check-input") }}
+                    {{ form.localisable.label(class="form-check-label") }}
+                </div>
+				
+			</fieldset>
+			<div class="form-group">
+				{{form.submit(class="btn btn-outline-info")}}
+				
+			</div>
+		</form>
+	</div>
+	
+	
+{% endblock content%}

@@ -22,6 +22,14 @@ Complete detail about the classes and modules is present in FormStorage.docx
 ********************************************************
 Testing:
 ********************************************************
+
+pytest:
+  
+  pip install pytest-flask
+  py.test
+
+
+
 curl commands to:
 
 store data: 
@@ -35,7 +43,4 @@ query based on value and/or localisable fields:
  curl --request POST --data '{"value":"xyzsda"}' http://localhost:5000/display
  curl http://localhost:5000/display
   
-  pytest:
   
-  pip install pytest-flask
-  py.test

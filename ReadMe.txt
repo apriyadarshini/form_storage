@@ -28,7 +28,7 @@ pytest:
   pip install pytest-flask
   py.test
 
-
+Tests are present in test_flask_fs.py
 
 curl commands to:
 

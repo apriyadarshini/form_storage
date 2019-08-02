@@ -1,14 +1,10 @@
 {% extends "layout.html" %}
 {% block content%}
-<h1 class="mb-3">List of Form fields</h1>
 	<p class="article-content"> Form ID: Form Field </p>
 	{% for post in formdata %}
-		<article class="media content-section">
-          <div class="media-body">
             <p class="article-content">{{ post.form_id}}: {{post.form_field }}</p>
-          </div>
-        </article>
 	{% endfor %}
-	
-	
+	{%if formdata is none  %}
+	<p class="article-content">No data found</p>
+	{% endif %}
 {% endblock content%}

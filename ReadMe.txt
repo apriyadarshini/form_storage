@@ -17,4 +17,25 @@ We can also easily modify it (in FormStorage.forms.routes module) to use json in
 
 To store bulk data we can have the bulk input in a json file and load from the file using json package into a dictionary and loop over it to create instances of classes present in FormStorage.models reflecting the tables and store them in the tables 
 
-Complete detail about the classes and modules is present in FormStorage.docx 
+Complete detail about the classes and modules is present in FormStorage.docx
+ 
+********************************************************
+Testing:
+********************************************************
+curl commands to:
+
+store data: 
+curl --request POST --data '{"form_field":"xyz","value":"xyzsda","localisable":"Yes"}' http://localhost:5000
+
+get the data for a given id: 
+curl  http://localhost:5000/storedid/<id>
+
+query based on value and/or localisable fields:
+ curl --request POST --data '{"value":"xyzsda","localisable":"Yes"}' http://localhost:5000/display
+ curl --request POST --data '{"value":"xyzsda"}' http://localhost:5000/display
+ curl http://localhost:5000/display
+  
+  pytest:
+  
+  pip install pytest-flask
+  py.test

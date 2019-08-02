@@ -32,4 +32,26 @@ def test_display_args2_bad(client):
 def test_display_getform(client):
     assert client.get(url_for('forms.storedid',id=1)).status_code == 200
     
+    
+#C:\aruna\eclipse\Form_Storage>py.test
+#================================================= test session starts =================================================
+#platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0
+#rootdir: C:\aruna\eclipse\Form_Storage
+#plugins: flask-0.15.0
+#collected 7 items
+#
+#test_flask_fs.py .......                                                                                         [100%]
+# 
+#================================================== warnings summary ===================================================
+#test_flask_fs.py::test_store
+#test_flask_fs.py::test_store_bad
+#test_flask_fs.py::test_display
+#test_flask_fs.py::test_display_args1
+#test_flask_fs.py::test_display_args2
+#test_flask_fs.py::test_display_args2_bad
+#test_flask_fs.py::test_display_getform
+#  c:\users\sachin\appdata\local\programs\python\python37-32\lib\site-packages\flask_sqlalchemy\__init__.py:835: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+#    'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
 
+#-- Docs: https://docs.pytest.org/en/latest/warnings.html
+#======================================== 7 passed, 7 warnings in 0.27 seconds =========================================
